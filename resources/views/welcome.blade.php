@@ -856,14 +856,11 @@
             </div>
             <h1>hii</h1>
             <button id="ajaxButton1" style="padding: 4px; background-color:aqua">Make AJAX Request 1</button>
-            <button id="ajaxButton2">Make AJAX Request 2</button>
+            <button id="ajaxButton2" style="padding: 4px; background-color:aqua">Make AJAX Request 2</button>
 
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script>
                 $(document).ready(function() {
-                    function getCsrfToken() {
-                        return $('meta[name="csrf-token"]').attr('content');
-                    }
 
                     $('#ajaxButton1').click(function() {
                         $.ajax({
@@ -871,7 +868,7 @@
                             url: '/ajax-request1', // Use Blade syntax to generate the route URL
                             dataType: 'json',
                             headers: {
-                                'X-CSRF-TOKEN': getCsrfToken()
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                             },
                             success: function(data) {
                                 console.log(data.message);
@@ -888,7 +885,7 @@
                             url: '/ajax-request2', 
                             dataType: 'json',
                             headers: {
-                                'X-CSRF-TOKEN': getCsrfToken()
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                             },
                             success: function(data) {
                                 console.log(data.message);
