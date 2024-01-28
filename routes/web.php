@@ -24,4 +24,10 @@ Route::get('todo_create', [TodoController::class, 'create']);
 Route::post('todo_submit', [TodoController::class, 'store']);
 Route::get('todo_edit/{id}', [TodoController::class, 'edit']);
 Route::post('todo_update/{id}', [TodoController::class, 'update']);
+
+
+Route::post('/ajax-request1', [TodoController::class, 'ajaxRequest1']);
+Route::post('/ajax-request2', [TodoController::class, 'ajaxRequest2']);
+
+
 // Route::get('/your/index', [TodoController::class, 'index'])->name('your.index');

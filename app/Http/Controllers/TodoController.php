@@ -16,6 +16,21 @@ class TodoController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function ajaxRequest1()
+    {
+        return 'ho gaya1';
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function ajaxRequest2()
+    {
+        return 'ho gaya2';
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
